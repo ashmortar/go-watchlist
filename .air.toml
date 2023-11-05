@@ -7,7 +7,7 @@ args_bin = []
 bin = "./tmp/main"
 cmd = "go build -o ./tmp/main cmd/main.go"
 delay = 1000
-exclude_dir = ["assets", "tmp", "vendor", "testdata"]
+exclude_dir = ["tmp", "vendor", "testdata", "node_modules"]
 exclude_file = []
 exclude_regex = ["_test.go", "_templ.go"]
 exclude_unchanged = true
@@ -21,7 +21,12 @@ log = "build-errors.log"
 poll = false
 poll_interval = 0
 post_cmd = []
-pre_cmd = ["echo generating component templates", "~/go/bin/templ generate"]
+pre_cmd = [
+    "echo generating asset files",
+    "npm run build",
+    "echo generating component templates",
+    "~/go/bin/templ generate",
+]
 rerun = false
 rerun_delay = 500
 send_interrupt = false

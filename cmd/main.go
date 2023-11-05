@@ -8,8 +8,10 @@ import (
 
 	"os/signal"
 
-	"github.com/ashmortar/go-watchlist/db"
-	"github.com/ashmortar/go-watchlist/handlers"
+	"github.com/ashmortar/go-watchlist/assets"
+	"github.com/ashmortar/go-watchlist/router"
+	"github.com/gorilla/sessions"
+	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/rs/zerolog"
@@ -26,11 +28,11 @@ func main() {
 	}
 
 	// Initialize SQLite database
-	DB, err =: db.Open()
-	if err != nil {
-		panic(err)
-	}
-	defer db.Close(DB)
+	// DB, err := db.Open()
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer db.Close(DB)
 
 	// Initialize Echo
 	e := echo.New()
@@ -50,15 +52,30 @@ func main() {
 			return nil
 		},
 	}))
-	e.Static("/", "public")
+	e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			c.Set("logger", logger)
+			return next(c)
+		}
+	})
+	// e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+	// 	return func(c echo.Context) error {
+	// 		c.Set("DB", DB)
+	// 		return next(c)
+	// 	}
+	// })
+	// e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+	// 	return func(c echo.Context) error {
+	// 		c.Set("config", viper)
+	// 		return next(c)
+	// 	}
+	// })
+	assets.Serve(e)
 	e.Use(middleware.Recover())
 	e.Use(middleware.Gzip())
+	e.Use(session.Middleware(sessions.NewCookieStore([]byte("secret"))))
 
-	e.GET("/", handlers.Home)
-	// Routes
-	e.GET("/login", func(c echo.Context) error {
-		return c.String(200, "Login")
-	})
+	router.InitRoutes(e)
 
 	// Start server
 	go func() {
@@ -79,4 +96,3 @@ func main() {
 		e.Logger.Fatal(err)
 	}
 }
-
