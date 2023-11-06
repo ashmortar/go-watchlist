@@ -36,7 +36,7 @@ func ParseGoogleJwtClaims(jwtStr string) (models.User, error) {
 	}
 	googleClaims := models.User{}
 
-	er := mapstructure.Decode(claims, googleClaims)
+	er := mapstructure.Decode(claims, &googleClaims)
 	if er != nil {
 		return models.User{}, er
 	}
