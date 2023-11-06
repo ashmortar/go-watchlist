@@ -1,0 +1,41 @@
+package components
+
+import "github.com/ashmortar/go-watchlist/models"
+
+templ UserAvatar(user *models.User) {
+	<div class="flex">
+		<div>
+			<img class="h-10 w-10 rounded-full" src={ user.Picture }/>
+		</div>
+		<div class="ml-3">
+			<p class="font-medium text-amber-500">{ user.Name }</p>
+			<p class="text-sm text-orange-100">{ user.Email }</p>
+		</div>
+		<div class="ml-3 flex grow justify-center items-center">
+            <form action="/logout" method="get" class="mt-0 mb-0">
+                <button title="logout" type="submit" class="text-sm text-orange-100 flex grow justify-center items-center">
+                    <image src="/images/logout.png" class="h-6 w-6"></image>
+                </button>
+            </form>
+		</div>
+	</div>
+}
+
+templ SignInWithGoogle(clientID string, loginURI string) {
+	<script src="https://accounts.google.com/gsi/client" async></script>
+	<div
+ 		id="g_id_onload"
+ 		data-client_id={ clientID }
+ 		data-login_uri={ loginURI }
+ 		data-auto_prompt="false"
+	></div>
+	<div
+ 		class="g_id_signin"
+ 		data-type="standard"
+ 		data-size="large"
+ 		data-theme="outline"
+ 		data-text="sign_in_with"
+ 		data-shape="rectangular"
+ 		data-logo_alignment="left"
+	></div>
+}

@@ -36,22 +36,27 @@ func Profile(c echo.Context) error {
 	if err != nil {
 		logger.Info().Msgf("user not logged in. Error was: %s", err.Error())
 		oauthConfig := googleOauth2Config()
-		content := components.LoginButton(
+		content := components.SignInWithGoogle(
 			oauthConfig.ClientID,
 			oauthConfig.RedirectURL,
 		)
 		if isHtmx {
 			return utils.Render(c, content)
 		}
+		return utils.Render(c, components.Page(
+			"Watchlist",
+			components.Header("Watchlist", utils.HeaderLinks(c)),
+			content,
+		))
 	}
 	logger.Info().Msgf("user logged in. User: %s", currentUser.Subject)
-	content := components.Avatar(currentUser)
+	content := components.UserAvatar(currentUser)
 	if isHtmx {
 		return utils.Render(c, content)
 	}
 	return utils.Render(c, components.Page(
 		"Watchlist",
-		components.Header("Watchlist"),
+		components.Header("Watchlist", utils.HeaderLinks(c)),
 		content,
 	))
 }
@@ -78,7 +83,7 @@ func GoogleCallback(c echo.Context) error {
 		SameSite: http.SameSiteStrictMode,
 	})
 
-	return c.Redirect(http.StatusFound, "/")
+	return c.Redirect(http.StatusFound, "/dashboard")
 }
 
 func Logout(c echo.Context) error {

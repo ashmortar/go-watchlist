@@ -17,3 +17,11 @@ func CurrentUser(c echo.Context) (*models.User, error) {
 	}
 	return user, nil
 }
+
+func HeaderLinks(c echo.Context) []models.HeaderLink {
+	_, err := CurrentUser(c)
+	if err != nil {
+		return models.PublicLinks
+	}
+	return models.AuthLinks
+}

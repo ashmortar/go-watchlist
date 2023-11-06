@@ -1,0 +1,12 @@
+package components
+
+import (
+    "github.com/ashmortar/go-watchlist/models"
+)
+
+templ Dashboard(user *models.User) {
+    <div>
+        <h2>Dashboard</h2>
+        <p>Hi {user.Name}!</p>
+    </div>
+}

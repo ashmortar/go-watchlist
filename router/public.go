@@ -6,7 +6,7 @@ import (
 )
 
 func publicRoutes(e *echo.Echo) error {
-	e.GET("/", handlers.IndexPage)
+	e.GET("/", handlers.Index)
 	e.GET("/home", handlers.Home)
 	e.GET("/contact", handlers.Contact)
 

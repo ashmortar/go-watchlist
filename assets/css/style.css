@@ -636,6 +636,10 @@ video {
   margin-right: 1.5rem;
 }
 
+.mt-0 {
+  margin-top: 0px;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1065,10 +1069,6 @@ video {
 
   .md\:mr-12 {
     margin-right: 3rem;
-  }
-
-  .md\:mr-5 {
-    margin-right: 1.25rem;
   }
 
   .md\:inline {

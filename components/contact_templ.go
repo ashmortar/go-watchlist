@@ -23,7 +23,7 @@ func Contact() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"page-content\" class=\"mx-auto sm:p-0 my-auto main-card\"><section class=\"mx-auto bg-white max-w-screen-xl rounded-lg shadow-md\"><div class=\"grid grid-cols-4 text-gray-800\"><div class=\"order-first col-span-4 max-w-screen-md px-8 py-10 md:order-last md:px-10 md:py-12\"><h2 class=\"mb-8 text-2xl font-black\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"mx-auto sm:p-0 my-auto main-card\"><section class=\"mx-auto bg-white max-w-screen-xl rounded-lg shadow-md\"><div class=\"grid grid-cols-4 text-gray-800\"><div class=\"order-first col-span-4 max-w-screen-md px-8 py-10 md:order-last md:px-10 md:py-12\"><h2 class=\"mb-8 text-2xl font-black\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

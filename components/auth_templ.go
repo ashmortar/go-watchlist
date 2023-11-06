@@ -12,7 +12,7 @@ import "bytes"
 
 import "github.com/ashmortar/go-watchlist/models"
 
-func Avatar(user *models.User) templ.Component {
+func UserAvatar(user *models.User) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -51,7 +51,7 @@ func Avatar(user *models.User) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div class=\"ml-3 flex grow justify-center items-center\"><form action=\"/logout\" method=\"get\" class=\"flex grow justify-center items-center\"><button title=\"logout\" type=\"submit\" class=\"text-sm text-orange-100 flex grow justify-center items-center\"><image src=\"/images/logout.png\" class=\"h-6 w-6\"></image></button></form></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div class=\"ml-3 flex grow justify-center items-center\"><form action=\"/logout\" method=\"get\" class=\"mt-0 mb-0\"><button title=\"logout\" type=\"submit\" class=\"text-sm text-orange-100 flex grow justify-center items-center\"><image src=\"/images/logout.png\" class=\"h-6 w-6\"></image></button></form></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -62,7 +62,7 @@ func Avatar(user *models.User) templ.Component {
 	})
 }
 
-func LoginButton(clientID string, loginURI string) templ.Component {
+func SignInWithGoogle(clientID string, loginURI string) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
