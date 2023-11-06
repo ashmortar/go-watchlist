@@ -12,7 +12,7 @@ import "bytes"
 
 import "github.com/ashmortar/go-watchlist/models"
 
-func List(list *models.List) templ.Component {
+func List(list models.List) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -96,7 +96,7 @@ func List(list *models.List) templ.Component {
 	})
 }
 
-func Lists(lists *[]models.List) templ.Component {
+func Lists(lists []models.List) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -122,8 +122,8 @@ func Lists(lists *[]models.List) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		for _, list := range *lists {
-			templ_7745c5c3_Err = List(&list).Render(ctx, templ_7745c5c3_Buffer)
+		for _, list := range lists {
+			templ_7745c5c3_Err = List(list).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

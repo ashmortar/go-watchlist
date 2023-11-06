@@ -2,7 +2,7 @@ package components
 
 import "github.com/ashmortar/go-watchlist/models"
 
-templ UserAvatar(user *models.User) {
+templ UserAvatar(user models.User) {
 	<div class="flex">
 		<div>
 			<img class="h-10 w-10 rounded-full" src={ user.Picture }/>

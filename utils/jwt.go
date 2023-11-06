@@ -24,21 +24,21 @@ func validateAndGetJwtClaims(jwtStr, algorithm string, keyfunc jwt.Keyfunc) (jwt
 	return claims, nil
 }
 
-func ParseGoogleJwtClaims(jwtStr string) (*models.User, error) {
+func ParseGoogleJwtClaims(jwtStr string) (models.User, error) {
 	kf, err := getJwksKeyfuncForIssuer(ctx, "https://accounts.google.com")
 	if err != nil {
-		return nil, err
+		return models.User{}, err
 	}
 
 	claims, err := validateAndGetJwtClaims(jwtStr, "RS256", kf.Keyfunc)
 	if err != nil {
-		return nil, err
+		return models.User{}, err
 	}
-	googleClaims := &models.User{}
+	googleClaims := models.User{}
 
 	er := mapstructure.Decode(claims, googleClaims)
 	if er != nil {
-		return nil, er
+		return models.User{}, er
 	}
 
 	return googleClaims, nil

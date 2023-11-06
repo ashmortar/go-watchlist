@@ -13,26 +13,26 @@ type Item struct {
 
 var items = []Item{}
 
-func CreateItem(json string) *Item {
+func CreateItem(json string) Item {
 	item := Item{
 		ID:   uuid.New().String(),
 		json: json,
 	}
 	items = append(items, item)
-	return &item
+	return item
 }
 
 func GetItems() *[]Item {
 	return &items
 }
 
-func GetItem(id string) (*Item, error) {
+func GetItem(id string) (Item, error) {
 	for _, item := range items {
 		if item.ID == id {
-			return &item, nil
+			return item, nil
 		}
 	}
-	return nil, errors.New("Item not found")
+	return Item{}, errors.New("Item not found")
 }
 
 func DeleteItem(id string) error {
