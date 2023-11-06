@@ -48,7 +48,7 @@ templ Page(page_title string, Header templ.Component, Main templ.Component) {
 		</head>
 		<body class="flex flex-col h-full bg-slate-100">
 			{! Header }
-			<main id="page-content" class="flex grow font-sans">
+			<main id="page-content" class="flex grow font-sans max-h-screen">
 				{! Main }
 			</main>
 			@Footer()

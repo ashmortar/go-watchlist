@@ -24,6 +24,8 @@ post_cmd = []
 pre_cmd = [
     "echo generating asset files",
     "npm run build",
+    # "echo format templ files",
+    # "~/go/bin/templ fmt .",
     "echo generating component templates",
     "~/go/bin/templ generate",
 ]

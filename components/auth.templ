@@ -12,11 +12,11 @@ templ UserAvatar(user *models.User) {
 			<p class="text-sm text-orange-100">{ user.Email }</p>
 		</div>
 		<div class="ml-3 flex grow justify-center items-center">
-            <form action="/logout" method="get" class="mt-0 mb-0">
-                <button title="logout" type="submit" class="text-sm text-orange-100 flex grow justify-center items-center">
-                    <image src="/images/logout.png" class="h-6 w-6"></image>
-                </button>
-            </form>
+			<form action="/logout" method="get" class="mt-0 mb-0">
+				<button title="logout" type="submit" class="text-sm text-orange-100 flex grow justify-center items-center">
+					<image src="/images/logout.png" class="h-6 w-6"></image>
+				</button>
+			</form>
 		</div>
 	</div>
 }

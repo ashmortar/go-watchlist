@@ -14,8 +14,8 @@ var PublicLinks = []HeaderLink{
 
 var AuthLinks = []HeaderLink{
 	{
-		Title: "Dashboard",
-		Path:  "/dashboard",
+		Title: "Lists",
+		Path:  "/lists",
 	},
 	{
 		Title: "Contact",

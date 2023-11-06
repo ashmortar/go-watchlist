@@ -1,12 +1,18 @@
 package components
 
 import (
-    "github.com/ashmortar/go-watchlist/models"
+	"github.com/ashmortar/go-watchlist/models"
 )
 
 templ Dashboard(user *models.User) {
-    <div>
-        <h2>Dashboard</h2>
-        <p>Hi {user.Name}!</p>
-    </div>
+	<div class="mx-auto sm:p-0 my-auto main-card">
+		<section class="px-4 py-2 mx-auto bg-white max-w-screen-xl rounded-lg shadow-md"
+ 			id="lists"
+ 			hx-get="/lists"
+ 			hx-trigger="load"
+ 			hx-swap="innerHTML"
+		>
+			<p>Loading...</p>
+		</section>
+	</div>
 }
