@@ -11,7 +11,7 @@ require (
 	github.com/google/uuid v1.3.1
 	github.com/gorilla/sessions v1.2.1
 	github.com/labstack/echo-contrib v0.15.0
-	github.com/labstack/echo/v4 v4.11.2
+	github.com/labstack/echo/v4 v4.11.3
 	github.com/libsql/libsql-client-go v0.0.0-20231026052543-fce76c0f39a7
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/rs/zerolog v1.31.0
