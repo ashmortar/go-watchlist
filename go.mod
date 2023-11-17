@@ -6,6 +6,7 @@ toolchain go1.21.2
 
 require (
 	github.com/MicahParks/keyfunc v1.9.0
+	github.com/MicahParks/keyfunc/v2 v2.1.0
 	github.com/a-h/templ v0.2.432
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/google/uuid v1.3.1
