@@ -12,7 +12,7 @@ require (
 	github.com/gorilla/sessions v1.2.1
 	github.com/labstack/echo-contrib v0.15.0
 	github.com/labstack/echo/v4 v4.11.2
-	github.com/libsql/libsql-client-go v0.0.0-20231026052543-fce76c0f39a7
+	github.com/libsql/libsql-client-go v0.0.0-20240416075003-747366ff79c4
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/rs/zerolog v1.31.0
 	github.com/spf13/viper v1.17.0
