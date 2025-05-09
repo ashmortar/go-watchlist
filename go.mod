@@ -16,7 +16,7 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/rs/zerolog v1.31.0
 	github.com/spf13/viper v1.17.0
-	golang.org/x/oauth2 v0.12.0
+	golang.org/x/oauth2 v0.30.0
 	modernc.org/sqlite v1.27.0
 )
 
