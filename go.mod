@@ -2,7 +2,7 @@ module github.com/ashmortar/go-watchlist
 
 go 1.21
 
-toolchain go1.21.2
+toolchain go1.27.1
 
 require (
 	github.com/MicahParks/keyfunc v1.9.0
