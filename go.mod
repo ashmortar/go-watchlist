@@ -1,8 +1,6 @@
 module github.com/ashmortar/go-watchlist
 
-go 1.21
-
-toolchain go1.21.2
+go 1.24
 
 require (
 	github.com/MicahParks/keyfunc v1.9.0
@@ -32,7 +30,7 @@ require (
 	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
-	github.com/klauspost/compress v1.17.0 // indirect
+	github.com/klauspost/compress v1.18.7 // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/libsql/sqlite-antlr4-parser v0.0.0-20230802215326-5cb5bb604475 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
